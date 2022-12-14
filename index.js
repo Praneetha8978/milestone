@@ -13,6 +13,7 @@ const todoList = () => {
       if (val.dueDate === yesterday) {
         over.push(val)
       }
+      return over
     })
     return over
   }
@@ -23,6 +24,7 @@ const todoList = () => {
       if (val.dueDate === today) {
         dueTo.push(val)
       }
+      return dueTo
     })
     return dueTo
   }
@@ -33,6 +35,7 @@ const todoList = () => {
       if (val.dueDate === tomorrow) {
         dueLate.push(val)
       }
+      return dueLate
     })
     return dueLate
   }
@@ -42,14 +45,11 @@ const todoList = () => {
     for (let i = 0; i < list.length; i++) {
       if (list[i].completed === true && list[i].dueDate === today) {
         output += '[x]' + ' ' + list[i].title + '\n'
-      }
-      else if (list[i].dueDate === today) {
+      } else if (list[i].dueDate === today) {
         output += '[ ]' + ' ' + list[i].title + '\n'
-      }
-      else if (list[i].dueDate === yesterday) {
+      } else if (list[i].dueDate === yesterday) {
         output += '[ ]' + ' ' + list[i].title + ' ' + list[i].dueDate + '\n'
-      }
-      else if (list[i].dueDate === tomorrow) {
+      } else if (list[i].dueDate === tomorrow) {
         output += '[ ]' + ' ' + list[i].title + ' ' + list[i].dueDate + '\n'
       }
     }
